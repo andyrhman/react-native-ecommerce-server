@@ -3,10 +3,6 @@ export const connectDB = async () => {
     try {
         const { connection } = await mongoose.connect(process.env.MONGO_URI, {
             dbName: "ReactNativeEcommerceCourse",
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            serverSelectionTimeoutMS: 30000,  // Increase server selection timeout
-            socketTimeoutMS: 45000,  // Increase socket timeout
         });
 
         console.log(`Server connected to database ${connection.host}`);
