@@ -2,7 +2,7 @@ import { asyncError } from "../middlewares/error.js";
 import { Order } from "../models/order.js";
 import { Product } from "../models/product.js";
 import ErrorHandler from "../utils/error.js";
-import { stripe } from "../server.js";
+import { stripe } from "../app.js";
 
 export const processPayment = asyncError(async (req, res, next) => {
     const { totalAmount } = req.body;

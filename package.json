@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "Set NODE_ENV=Development&& nodemon server.js",
-    "start": "node server.js"
+    "dev": "Set NODE_ENV=Development&& nodemon app.js",
+    "start": "node app.js"
   },
   "type": "module",
   "keywords": [],
