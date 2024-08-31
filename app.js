@@ -26,13 +26,13 @@ cloudinary.v2.config({
 // Using Middlewares
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     credentials: true,
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     origin: [process.env.FRONTEND_URI_1, process.env.FRONTEND_URI_2],
-//   })
-// );
+app.use(
+  cors({
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: ['http://192.168.1.7:8081'],
+  })
+);
 
 app.listen(process.env.PORT, () => {
   console.log(
@@ -42,6 +42,9 @@ app.listen(process.env.PORT, () => {
 
 app.get("/", (req, res, next) => {
   res.send("Working");
+});
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'Connection successful!' });
 });
 
 // Importing Routers here
